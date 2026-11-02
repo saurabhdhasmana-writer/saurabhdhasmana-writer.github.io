@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Documentation Initiatives - Saurabh Dhasmana
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <a class="brand" href="index.html">
+    <span class="brand-mark">
+     SD
+    </span>
+    <span>
+     <strong>
+      SAURABH DHASMANA
+     </strong>
+     <small>
+      TECHNICAL WRITER &amp; DOCUMENTATION STRATEGIST
+     </small>
+    </span>
+   </a>
+   <nav>
+    <a href="index.html">
+     Home
+    </a>
+    <a href="resume.html">
+     Resume
+    </a>
+    <a class="active" href="documentation.html">
+     Documentation Initiatives
+    </a>
+    <a href="ai.html">
+     AI Initiatives
+    </a>
+    <a href="domains.html">
+     Domains
+    </a>
+    <a href="blog.html">
+     Blog
+    </a>
+    <a href="tools.html">
+     Tools
+    </a>
+    <a href="contact.html">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <main>
+   <section class="page-hero documentation-landing">
+    <p class="eyebrow">
+     02 / DOCUMENTATION INITIATIVES
+    </p>
+    <h1>
+     Problems I solved.
+     <br/>
+     Processes I improved.
+    </h1>
+    <p class="lead">
+     Selected examples of documentation strategy, workflow improvement, consolidation, traceability, and cross-functional collaboration. Detailed metrics and confidential product information will be added only where they can be safely disclosed.
+    </p>
+   </section>
+   <section aria-label="Documentation initiatives" class="page-content documentation-explorer">
+    <div class="initiative-grid" id="initiativeGrid">
+     <article class="initiative initiative-card" data-id="01" data-title="Building a Unified Documentation System from 70+ Product Kits" tabindex="0">
+      <span class="tag">INITIATIVE 01</span>
+      <h2>Building a Unified Documentation System from 70+ Product Kits</h2>
+      <p><strong>Challenge:</strong> Documentation for more than 70 product kits was spread across multiple documents and locations, making updates difficult to maintain and information harder to find.</p>
+      <p><strong>What I did:</strong> Restructured the information architecture and consolidated product content into a single HTML-based manual with reusable content, solution-based navigation, visual installation guidance, troubleshooting, and centralized resources.</p>
+      <p><strong>Impact:</strong> Reduced documentation turnaround time by approximately 60–70% while improving consistency, maintainability, and information access.</p>
+      <span class="explore">READ CASE STUDY &rarr;</span>
+     </article>
+     <article class="initiative initiative-card" data-id="02" data-title="Automating Legacy FrameMaker-to-DITA Migration" tabindex="0">
+      <span class="tag">INITIATIVE 02</span>
+      <h2>Automating Legacy FrameMaker-to-DITA Migration</h2>
+      <p><strong>Challenge:</strong> Migrating a large collection of legacy FrameMaker documents manually would require significant time alongside ongoing responsibilities. Hiring temporary resources would also increase project costs.</p>
+      <p><strong>What I did:</strong> Assessed the manual effort, researched automated solutions, identified STILO Migrate, and initiated discussions with the vendor. I worked with the company to define customized migration rules aligned with the required DTD and stylesheets, then coordinated the conversion to structured DITA content.</p>
+      <p><strong>Impact:</strong> Completed the migration in approximately two weeks, avoiding the need for additional temporary resources and significantly reducing migration effort.</p>
+      <span class="explore">READ INITIATIVE &rarr;</span>
+     </article>
+    </div>
+    <div class="initiative-reading" hidden="" id="initiativeReading">
+     <aside aria-label="Documentation initiative table of contents" class="initiative-sidebar">
+      <div class="sidebar-title">
+       DOCUMENTATION INITIATIVES
+      </div>
+      <div class="initiative-toc" id="initiativeToc">
+      </div>
+     </aside>
+     <article class="initiative-detail" id="initiativeDetail" tabindex="-1">
+     </article>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <span>
+    &copy; 2026 Saurabh Dhasmana
+   </span>
+   <span>
+    Case studies will expand as publishable examples are added.
+   </span>
+  </footer>
+  <script>
+   (function () {
+  const grid = document.getElementById('initiativeGrid');
+  const reading = document.getElementById('initiativeReading');
+  const toc = document.getElementById('initiativeToc');
+  const detail = document.getElementById('initiativeDetail');
+  const cards = Array.from(document.querySelectorAll('.initiative-card'));
+
+  const caseStudies = [
+    `
+      <div class="detail-topline"><span>01 / 02</span></div>
+      <h1>Building a Unified Documentation System from 70+ Product Kits</h1>
+      <p class="detail-meta">Documentation Strategy · Information Architecture · Content Reuse · Process Improvement</p>
+      <div class="detail-section">
+        <h2>The challenge</h2>
+        <p>I led documentation for a global Unified Communications portfolio with more than <strong>70 product kits and nearly 20 accessories</strong>. Product information, installation guidance, configuration details, and support resources were spread across multiple documents. Repeated content made updates time-consuming and increased the risk of inconsistencies.</p>
+      </div>
+      <div class="detail-section">
+        <h2>What I changed</h2>
+        <p>I rethought the information architecture around the needs of installers, distributors, presales teams, trainers, and support users. I consolidated the portfolio into a <strong>single HTML-based product manual</strong> with reusable content and solution-based navigation.</p>
+        <ul>
+          <li>Centralized product, hardware, specification, and compliance information.</li>
+          <li>Organized content around solutions and user tasks rather than separate product documents.</li>
+          <li>Added visual installation guidance, troubleshooting, and links to training, support, and technical resources.</li>
+          <li>Created a dedicated area for discontinued products so existing customers could continue to access relevant documentation.</li>
+          <li>Consolidated applicable printed compliance sheets to simplify creation and inventory handling.</li>
+        </ul>
+      </div>
+      <div class="detail-section detail-impact">
+        <h2>The impact</h2>
+        <div class="impact-number">60–70%</div>
+        <p class="impact-label">reduction in documentation turnaround time</p>
+        <p>Reusable content reduced repeated editing, review, publishing, archiving, and verification effort. The unified experience also made information easier to find and maintain across the product lifecycle.</p>
+      </div>
+      <div class="detail-nav"><button type="button" data-prev>← PREVIOUS INITIATIVE</button><button type="button" class="next-button" data-next>NEXT INITIATIVE →</button></div>
+    `,
+    `
+      <div class="detail-topline"><span>02 / 02</span></div>
+      <h1>Automating Legacy FrameMaker-to-DITA Migration</h1>
+      <p class="detail-meta">Structured Authoring · Process Improvement · Vendor Collaboration · Automation</p>
+      <div class="detail-section">
+        <h2>The challenge</h2>
+        <p>I was assigned to migrate a large collection of legacy FrameMaker documents into DITA. Having migrated some documents manually before, I assessed the effort required to complete the remaining work. The volume of content, alongside my other responsibilities, made a manual approach potentially lengthy. Bringing in temporary resources would also have increased the project cost.</p>
+      </div>
+      <div class="detail-section">
+        <h2>How I approached it</h2>
+        <ul>
+          <li>Evaluated the manual migration effort and recognized the need for a more scalable approach.</li>
+          <li>Researched automated migration options and identified STILO Migrate as a potential solution.</li>
+          <li>Took ownership of the initiative and led discussions with the vendor to understand the tool, process, and implementation requirements.</li>
+          <li>Worked with the vendor to define customized migration rules that mapped the legacy content to the required DITA structure, DTD, and stylesheets.</li>
+          <li>Coordinated the migration and prepared the resulting DITA content for import into the CMS and application of the documentation style guide.</li>
+        </ul>
+      </div>
+      <div class="detail-section detail-impact">
+        <h2>The outcome</h2>
+        <div class="impact-number">2 weeks</div>
+        <p class="impact-label">to complete the legacy content migration</p>
+        <p>The automated approach significantly reduced the time and effort compared with manual conversion and avoided the need to bring in additional temporary resources.</p>
+      </div>
+      <div class="detail-nav"><button type="button" data-prev>← PREVIOUS INITIATIVE</button><button type="button" class="next-button" data-next>NEXT INITIATIVE →</button></div>
+    `
+  ];
+
+  function buildToc(activeIndex) {
+    toc.innerHTML = cards.map((card, index) => `
+      <button class="toc-item${index === activeIndex ? ' active' : ''}" type="button" data-index="${index}">
+        <span class="toc-number">${card.dataset.id}</span><span class="toc-title">${card.dataset.title}</span>
+      </button>
+    `).join('');
+    toc.querySelectorAll('.toc-item').forEach(button => {
+      button.addEventListener('click', () => showInitiative(Number(button.dataset.index)));
+    });
+  }
+
+  function showInitiative(index) {
+    grid.classList.add('grid-collapsing');
+    setTimeout(() => {
+      grid.hidden = true;
+      grid.classList.remove('grid-collapsing');
+      reading.hidden = false;
+    document.body.classList.add('documentation-reading-mode');
+    detail.innerHTML = caseStudies[index];
+    buildToc(index);
+    reading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    detail.focus({ preventScroll: true });
+    detail.querySelector('[data-prev]').addEventListener('click', () => showInitiative((index - 1 + cards.length) % cards.length));
+      detail.querySelector('[data-next]').addEventListener('click', () => showInitiative((index + 1) % cards.length));
+    }, 260);
+  }
+
+  function resetView() {
+    grid.classList.remove('grid-collapsing');
+    grid.hidden = false;
+    reading.hidden = true;
+    document.body.classList.remove('documentation-reading-mode');
+    detail.innerHTML = '';
+    toc.innerHTML = '';
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => showInitiative(index));
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        showInitiative(index);
+      }
+    });
+  });
+
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) resetView();
+  });
+})();
+  </script>
+ </body>
+</html>
+
