@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -7,9 +8,134 @@
    Saurabh Dhasmana &mdash; Technical Writer &amp; Documentation Strategist
   </title>
   <link href="styles.css" rel="stylesheet"/>
+
+  <!-- RESPONSIVE MOBILE NAVIGATION -->
+  <style>
+   .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 10px 12px;
+    color: #111;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+   }
+
+   .menu-icon {
+    width: 19px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   }
+
+   .menu-icon span {
+    display: block;
+    width: 19px;
+    height: 2px;
+    background: currentColor;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+   }
+
+   .menu-toggle[aria-expanded="true"] .menu-icon span:first-child {
+    transform: translateY(6px) rotate(45deg);
+   }
+
+   .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) {
+    opacity: 0;
+   }
+
+   .menu-toggle[aria-expanded="true"] .menu-icon span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+   }
+
+   @media screen and (max-width: 760px) {
+
+    .site-header {
+     position: relative;
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     gap: 12px;
+     z-index: 1000;
+    }
+
+    .brand {
+     max-width: calc(100% - 100px);
+    }
+
+    .brand strong {
+     font-size: 13px;
+    }
+
+    .brand small {
+     font-size: 9px;
+     line-height: 1.4;
+    }
+
+    .menu-toggle {
+     display: inline-flex;
+     flex-shrink: 0;
+    }
+
+    .site-header > nav {
+     display: none !important;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     right: 0;
+     width: 100%;
+     box-sizing: border-box;
+     flex-direction: column;
+     align-items: stretch;
+     gap: 0;
+     padding: 8px 16px;
+     margin: 0;
+     background: #fff;
+     border: 1px solid #dedede;
+     border-radius: 0 0 8px 8px;
+     box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+     z-index: 1001;
+    }
+
+    .site-header > nav.is-open {
+     display: flex !important;
+    }
+
+    .site-header > nav a {
+     display: block;
+     width: 100%;
+     box-sizing: border-box;
+     padding: 13px 10px;
+     border-bottom: 1px solid #eeeeee;
+     text-decoration: none;
+     font-size: 14px;
+    }
+
+    .site-header > nav a:last-child {
+     border-bottom: none;
+    }
+
+    .site-header > nav a.active {
+     font-weight: 700;
+    }
+
+   }
+  </style>
  </head>
+
  <body>
+
   <header class="site-header">
+
    <a class="brand" href="index.html">
     <span class="brand-mark">
      SD
@@ -23,7 +149,25 @@
      </small>
     </span>
    </a>
-   <nav>
+
+   <!-- MOBILE MENU BUTTON -->
+   <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+   >
+    <span class="menu-icon" aria-hidden="true">
+     <span></span>
+     <span></span>
+     <span></span>
+    </span>
+    <span class="menu-label">Menu</span>
+   </button>
+
+   <!-- MAIN NAVIGATION -->
+   <nav id="main-navigation">
     <a class="active" href="index.html">
      Home
     </a>
@@ -45,188 +189,263 @@
     <a href="tools.html">
      Tools
     </a>
-    <a href="contact.html">
-     Contact
-    </a>
    </nav>
+
   </header>
+
   <main>
+
    <section class="hero">
     <div>
      <p class="eyebrow">
       HELLO, I'M
      </p>
+
      <h1>
       SAURABH
       <br/>
       DHASMANA
      </h1>
-     <div class="rule">
-     </div>
+
+     <div class="rule"></div>
+
      <h2>
       Technical Writer &amp;
       <br/>
       Documentation Strategist
      </h2>
+
      <p class="intro">
-      From aircraft systems to clinical software, I work where detailed product knowledge meets the people who need to use it. Across 18+ years and diverse industries, I’ve shaped technical information into documentation people can navigate, apply, and rely on.
+      From aircraft systems to clinical software, I work where detailed
+      product knowledge meets the people who need to use it. Across 18+
+      years and diverse industries, I've shaped technical information
+      into documentation people can navigate, apply, and rely on.
      </p>
+
      <div class="actions">
       <a class="button button-dark" href="documentation.html">
        Explore My Work
       </a>
      </div>
     </div>
+
     <div class="portrait-wrap">
-     <img alt="Saurabh Dhasmana professional portrait" class="portrait" src="images/profile.jpg"/>
+     <img
+      alt="Saurabh Dhasmana professional portrait"
+      class="portrait"
+      src="images/profile.jpg"
+     />
     </div>
    </section>
+
    <section class="section">
-    <div class="section-heading">
-     <span>
-     </span>
-     <h2>
-      WHAT I DO
-     </h2>
-     <span>
-     </span>
-    </div>
-    <div class="cards">
-     <a class="card" href="documentation.html">
-      <span class="number">
-       01
-      </span>
-      <h3>
-       Documentation
-       <br/>
-       Initiatives
-      </h3>
-      <p>
-       Problems I've solved, processes I've improved, and documentation work that delivered measurable or practical impact.
-      </p>
-      <span class="explore">
-       EXPLORE &rarr;
-      </span>
-     </a>
-     <a class="card" href="ai.html">
-      <span class="number">
-       02
-      </span>
-      <h3>
-       AI Initiatives
-      </h3>
-      <p>
-       How I use AI to accelerate research, analysis, drafting, and documentation workflows while keeping human judgment in control.
-      </p>
-      <span class="explore">
-       EXPLORE &rarr;
-      </span>
-     </a>
-     <a class="card" href="domains.html">
-      <span class="number">
-       03
-      </span>
-      <h3>
-       Domains
-      </h3>
-      <p>
-       Healthcare, clinical research, unified communications, aviation, and enterprise software&mdash;and what I've learned from each.
-      </p>
-      <span class="explore">
-       EXPLORE &rarr;
-      </span>
-     </a>
-     <a class="card" href="blog.html">
-      <span class="number">
-       04
-      </span>
-      <h3>
-       Blog
-      </h3>
-      <p>
-       Thoughts on technical writing, documentation strategy, AI, UX writing, product development, and professional growth.
-      </p>
-      <span class="explore">
-       EXPLORE &rarr;
-      </span>
-     </a>
-    </div>
-   </section>
+
+ <div class="section-heading">
+  <span></span>
+  <h2>THE EXPERIENCE I'VE BUILT</h2>
+  <span></span>
+ </div>
+
+ <div class="cards">
+
+  <div class="card">
+   <span class="number">01</span>
+   <h3>
+    Writing with
+    <br/>
+    Purpose
+   </h3>
+   <p>
+    I've learned that effective technical writing goes beyond
+    explaining features. It requires understanding how a product
+    works, how people use it, and what they need to accomplish.
+    I bring together product knowledge, technical depth, and user
+    empathy to turn complex information into clear, practical guidance.
+   </p>
+  </div>
+
+  <div class="card">
+   <span class="number">02</span>
+   <h3>
+    Documentation
+    <br/>
+    Strategy
+   </h3>
+   <p>
+    My experience has shaped how I approach documentation as an
+    evolving product rather than a collection of deliverables.
+    From content architecture and information design to release
+    planning, governance, and lifecycle management, I focus on
+    building documentation that is structured, maintainable,
+    discoverable, and aligned with user needs.
+   </p>
+  </div>
+
+  <div class="card">
+   <span class="number">03</span>
+   <h3>
+    Leadership &
+    <br/>
+    Collaboration
+   </h3>
+   <p>
+    I've learned to work across Product, UX, Engineering, QA,
+    Support, Training, and subject matter experts to bring
+    different perspectives into documentation. I believe in
+    mentoring writers, establishing repeatable processes,
+    involving documentation early in product development, and
+    making quality a shared responsibility.
+   </p>
+  </div>
+
+  <div class="card">
+   <span class="number">04</span>
+   <h3>
+    Innovation &
+    <br/>
+    Improvement
+   </h3>
+   <p>
+    I continuously look for better ways to research, create,
+    manage, and deliver content. From improving documentation
+    workflows and introducing process efficiencies to exploring
+    AI-assisted solutions, I focus on reducing repetitive effort,
+    improving quality, and giving writers more time to solve
+    meaningful user and product challenges.
+   </p>
+  </div>
+
+ </div>
+</section>
+
    <section class="impact-strip">
+
     <div>
-     <strong>
-      18+
-     </strong>
-     <span>
-      YEARS EXPERIENCE
-     </span>
+     <strong>18+</strong>
+     <span>YEARS EXPERIENCE</span>
     </div>
+
     <div>
-     <strong>
-      80+
-     </strong>
-     <span>
-      PRODUCTS DOCUMENTED
-     </span>
+     <strong>80+</strong>
+     <span>PRODUCTS DOCUMENTED</span>
     </div>
+
     <div>
-     <strong>
-      TEAM LEAD
-     </strong>
-     <span>
-      MENTOR &amp; COLLABORATOR
-     </span>
+     <strong>TEAM LEAD</strong>
+     <span>MENTOR &amp; COLLABORATOR</span>
     </div>
+
     <div>
-     <strong>
-      IMPACT FOCUSED
-     </strong>
-     <span>
-      CLARITY &middot; USABILITY &middot; VALUE
-     </span>
+     <strong>IMPACT FOCUSED</strong>
+     <span>CLARITY &middot; USABILITY &middot; VALUE</span>
     </div>
+
    </section>
+
    <section class="home-lower">
+
     <div>
-     <p class="eyebrow">
-      ABOUT ME
-     </p>
-     <h2>
-      A career built from fixing planes to fixing documentation challenges.
-     </h2>
-     <p>
-      I manage documentation across the full lifecycle, from planning and release strategy to content development, validation, and publication. I work closely with Product, UX, Engineering, QA, Support, Training, and subject matter experts to deliver documentation aligned with Agile releases.
-     </p>
-    </div>
+ <p class="eyebrow">ABOUT ME</p>
+
+ <h2>
+  A career built from fixing planes to fixing documentation challenges.
+ </h2>
+
+ <p>
+  My professional journey began in engineering and gradually evolved
+  into technical communication. Moving from aircraft systems to
+  unified communications, enterprise software, healthcare, and
+  clinical research has meant repeatedly stepping into unfamiliar
+  domains, learning complex products, and understanding how
+  different industries operate.
+ </p>
+
+ <p>
+  I've never been afraid of taking on something new or challenging.
+  I enjoy entering unfamiliar territory, asking questions, connecting
+  the dots, and finding practical ways to get things done. I believe
+  the ability to learn, adapt, and deliver matters just as much as
+  the experience you bring to a role.
+ </p>
+
+ <p>
+  Over the years, I've developed a reputation for taking ownership
+  and finding a way forward, even when the challenges aren't
+  straightforward. One comment from an AVP I worked with has stayed
+  with me:
+  <em>
+   "I don't know how he does it, but he always gets the job done,
+   no matter what's thrown at him."
+  </em>
+  I consider that one of the most meaningful compliments I've
+  received because it reflects the way I approach work.
+ </p>
+
+ <p>
+  That approach has also been recognized throughout my career.
+  I've received two Best Employee of the Month awards, along with
+  several Productivity and Quality awards at Capgemini. I also
+  received the Out of the Box award for applying critical thinking
+  to resolve delivery challenges and find practical solutions.
+ </p>
+
+ <p>
+  Beyond work, I'm someone who enjoys exploring ideas, experimenting
+  with technology, and discovering new possibilities. I value
+  continuous learning, practical thinking, and meaningful
+  improvement. I believe there's always a better way to solve a
+  problem, communicate an idea, or make someone's experience
+  a little easier.
+ </p>
+</div>
+
     <div>
-     <p class="eyebrow">
-      WHAT I BELIEVE
-     </p>
+     <p class="eyebrow">WHAT I BELIEVE</p>
+
      <ul class="checklist">
+
       <li>
        Good documentation is a product in itself and should be treated as one.
       </li>
+
       <li>
-       Be the user of what you produce to understand what users actually want to know about the product.
+       Be the user of what you produce to understand what users actually
+       want to know about the product.
       </li>
+
       <li>
-       Test the application or component like a tester. It significantly improves the quality of the writing.
+       Test the application or component like a tester. It significantly
+       improves the quality of the writing.
       </li>
+
       <li>
-       Use engineering input to understand logic and functionality, not as the sole source for content.
+       Use engineering input to understand logic and functionality,
+       not as the sole source for content.
       </li>
+
       <li>
-       Documentation quality improves when writers work early with product teams.
+       Documentation quality improves when writers work early with
+       product teams.
       </li>
+
       <li>
        Clear processes make good documentation repeatable.
       </li>
-      <li>AI should be an integral part of modern documentation practices, helping writers work smarter, improve quality, and focus more on user needs, while ensuring accuracy, human oversight, and responsible use.</li>
+
+      <li>
+       AI should be an integral part of modern documentation practices,
+       helping writers work smarter, improve quality, and focus more
+       on user needs, while ensuring accuracy, human oversight,
+       and responsible use.
+      </li>
 
      </ul>
     </div>
+
    </section>
+
   </main>
+
   <footer>
    <span>
     &copy; 2026 Saurabh Dhasmana
@@ -235,6 +454,67 @@
     Technical Writer &middot; Documentation Strategist
    </span>
   </footer>
+
+  <!-- MOBILE MENU FUNCTIONALITY -->
+  <script>
+   const menuButton = document.querySelector('.menu-toggle');
+   const navigation = document.querySelector('#main-navigation');
+   const menuLabel = document.querySelector('.menu-label');
+
+   function closeMenu() {
+    navigation.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation menu');
+    menuLabel.textContent = 'Menu';
+   }
+
+   function openMenu() {
+    navigation.classList.add('is-open');
+    menuButton.setAttribute('aria-expanded', 'true');
+    menuButton.setAttribute('aria-label', 'Close navigation menu');
+    menuLabel.textContent = 'Close';
+   }
+
+   menuButton.addEventListener('click', function () {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+
+    if (isOpen) {
+     closeMenu();
+    } else {
+     openMenu();
+    }
+   });
+
+   // Close menu after selecting a navigation link.
+   navigation.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+   });
+
+   // Close menu when clicking outside the navigation.
+   document.addEventListener('click', function (event) {
+    if (
+     !menuButton.contains(event.target) &&
+     !navigation.contains(event.target)
+    ) {
+     closeMenu();
+    }
+   });
+
+   // Close menu using the Escape key.
+   document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+     closeMenu();
+     menuButton.focus();
+    }
+   });
+
+   // Close mobile navigation when returning to desktop width.
+   window.addEventListener('resize', function () {
+    if (window.innerWidth > 760) {
+     closeMenu();
+    }
+   });
+  </script>
+
  </body>
 </html>
-

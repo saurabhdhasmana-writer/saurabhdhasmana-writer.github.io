@@ -1,138 +1,352 @@
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="AI initiatives by Saurabh Dhasmana, showcasing AI-powered release documentation automation and workflow-centered documentation improvements for clinical research users."/>
   <title>
    AI Initiatives &mdash; Saurabh Dhasmana
   </title>
   <link href="styles.css" rel="stylesheet"/>
+  <style>
+   /* Card presentation follows the Documentation Initiatives landing page. */
+   .ai-initiative-card {
+    border:1px solid #ddd;
+    border-top:2px solid #555;
+    padding:28px;
+    background:#fff;
+    min-height:100%;
+   }
+   .ai-initiative-card p {
+    color:#555;
+   }
+   .ai-initiative-card h2 {
+    font-size:28px;
+    line-height:1.1;
+    margin:12px 0;
+   }
+   .ai-initiative-card .tag {
+    color:#333;
+   }
+   .ai-initiative-card .explore {
+    color:#111;
+   }
+   .ai-initiative-card .card-impact {
+    border-top:1px solid #ddd;
+    margin-top:18px;
+    padding-top:14px;
+    font-size:13px;
+   }
+   .ai-initiative-card:hover {
+    border-color:#111;
+    transform:translateY(-3px);
+   }
+   .ai-tools-callout {
+    margin-top:38px;
+   }
+   .ai-detail-list {
+    padding-left:22px;
+    max-width:780px;
+   }
+   .ai-detail-list li {
+    margin:0 0 10px;
+    font-size:15px;
+   }
+   .ai-flow {
+    grid-template-columns:repeat(3,1fr);
+   }
+   @media(max-width:1050px) {
+    .ai-flow {
+     grid-template-columns:1fr;
+    }
+   }
+  </style>
  </head>
+
  <body>
   <header class="site-header">
    <a class="brand" href="index.html">
-    <span class="brand-mark">
-     SD
-    </span>
+    <span class="brand-mark">SD</span>
     <span>
-     <strong>
-      SAURABH DHASMANA
-     </strong>
-     <small>
-      TECHNICAL WRITER &amp; DOCUMENTATION STRATEGIST
-     </small>
+     <strong>SAURABH DHASMANA</strong>
+     <small>TECHNICAL WRITER &amp; DOCUMENTATION STRATEGIST</small>
     </span>
    </a>
    <nav>
-    <a href="index.html">
-     Home
-    </a>
-    <a href="resume.html">
-     Resume
-    </a>
-    <a href="documentation.html">
-     Documentation Initiatives
-    </a>
-    <a class="active" href="ai.html">
-     AI Initiatives
-    </a>
-    <a href="domains.html">
-     Domains
-    </a>
-    <a href="blog.html">
-     Blog
-    </a>
-    <a href="tools.html">
-     Tools
-    </a>
-    <a href="contact.html">
-     Contact
-    </a>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="documentation.html">Documentation Initiatives</a>
+    <a class="active" href="ai.html">AI Initiatives</a>
+    <a href="domains.html">Domains</a>
+    <a href="blog.html">Blog</a>
+    <a href="tools.html">Tools</a>
+    <a href="contact.html">Contact</a>
    </nav>
   </header>
+
   <main>
    <section class="page-hero">
-    <p class="eyebrow">
-     03 / AI INITIATIVES
-    </p>
+    <p class="eyebrow">03 / AI INITIATIVES</p>
     <h1>
      Use AI to move faster.
      <br/>
      Keep humans in control.
     </h1>
     <p class="lead">
-     My approach is to use AI where it reduces repetitive work and speeds up understanding, while keeping product knowledge, editorial judgment, validation, and final accountability with the writer.
+     I design and implement AI-assisted documentation workflows
+     that reduce repetitive work, automate documentation processes,
+     and improve content quality. My focus is on practical AI
+     applications that connect product changes, documentation,
+     and customer communication while retaining human judgment,
+     editorial control, validation, and accountability.
     </p>
    </section>
-   <section class="page-content">
-    
+
+   <section aria-label="AI initiatives" class="page-content documentation-explorer">
+    <div class="initiative-grid" id="aiInitiativeGrid">
+
+     <article class="initiative-card ai-initiative-card" data-id="01" data-title="AI-Powered Release Notes &amp; Documentation Automation" tabindex="0">
+      <span class="tag">AI INITIATIVE 01</span>
+      <h2>AI-Powered Release Notes &amp; Documentation Automation</h2>
+      <p><strong>Challenge:</strong> Release documentation requires writers to analyze engineering tickets, draft customer-facing notes, identify affected documentation, recommend updates, and create Jira tickets across recurring release cycles.</p>
+      <p><strong>What I built:</strong> An AI-assisted workflow using Claude Enterprise, application-specific Projects, reusable Skills, documentation impact analysis, suggested content updates, and command-driven Jira ticket creation.</p>
+      <p class="card-impact"><strong>Impact:</strong> Improved productivity and operational efficiency by more than 40%, shortened documentation turnaround times, and increased output while maintaining quality.</p>
+      <span class="explore">READ CASE STUDY &rarr;</span>
+     </article>
+
+     <article class="initiative-card ai-initiative-card" data-id="02" data-title="AI-Assisted Documentation Improvement" tabindex="0">
+      <span class="tag">AI INITIATIVE 02</span>
+      <h2>AI-Assisted Documentation Improvement</h2>
+      <p><strong>The shift:</strong> Moved documentation away from explaining application menus and features in isolation, towards guiding clinical research professionals through the tasks they need to complete.</p>
+      <p><strong>What I changed:</strong> Restructured guidance around real user workflows, responsibilities, and the sequence of activities users follow to complete tasks in line with established procedures and compliance requirements.</p>
+      <p class="card-impact"><strong>Focus:</strong> More natural, practical, workflow-led documentation, supported by AI-assisted research and content refinement while retaining human judgment and technical validation.</p>
+      <span class="explore">READ INITIATIVE &rarr;</span>
+     </article>
+
     </div>
 
-    <section class="initiative" style="margin-top:52px; padding:34px; border:1px solid #dedede; border-radius:12px;">
-     <span class="tag">FEATURED AI INITIATIVE · WORKFLOW DESIGN</span>
-     <h2>Release Notes and Documentation Update Assistant</h2>
-     <p class="lead">
-      An AI-driven documentation workflow designed for enterprise SaaS and regulated software. It connects engineering changes to customer-facing release notes and the documentation updates those changes may require—with evidence and a human reviewer at every decision point.
-     </p>
-     <h3>The challenge</h3>
-     <p>
-      Release documentation is often manual, repetitive, and late in the cycle. Writers must assess every engineering ticket, decide what customers need to know, identify affected guides and Learning Portal (LP) pages, and ensure every statement can be traced to reliable source information.
-     </p>
-     <h3>The proposed workflow</h3>
-     <div class="ai-flow">
-      <article><b>01</b><h3>Intake</h3><p>Start with a CSV, spreadsheet, pasted ticket, or read-only Jira lookup by ticket, epic, release, or search criteria.</p></article>
-      <article><b>02</b><h3>Triage</h3><p>Classify customer impact using core ticket fields. Mark uncertain cases for reviewer input instead of guessing.</p></article>
-      <article><b>03</b><h3>Draft</h3><p>Group related changes and draft customer-facing notes using the approved style guide and closest examples.</p></article>
-      <article><b>04</b><h3>Assess</h3><p>Review the LP index, shortlist relevant pages, and specify the location and exact type of documentation change.</p></article>
-     </div>
-     <h3>What the assistant produces</h3>
-     <ul>
-      <li><strong>Customer-facing release note:</strong> categorized as New Feature, Enhancement, Bug Fix, Configuration, Security &amp; Permissions, or Integration.</li>
-      <li><strong>Documentation impact:</strong> target location, change type, and concrete edits for user guides, admin guides, and LP content.</li>
-      <li><strong>Evidence and evaluation:</strong> traceability to ticket fields, versions, permissions, comments, attachments, and LP sections reviewed.</li>
-      <li><strong>Reviewer and SME questions:</strong> focused questions for gaps, conflicts, and unresolved decisions.</li>
-     </ul>
-     <h3>Accuracy and governance by design</h3>
-     <ul>
-      <li>Read-only Jira and Confluence access; no creating, editing, commenting, transitioning, or deleting records.</li>
-      <li>Ticket summary, description, acceptance criteria, and technical details remain the source of truth; comments, attachments, and design pages are reference-only.</li>
-      <li>Bug exclusions require version checks, including Fix Version, Affects Version, and introduced-in version; unresolved cases are escalated.</li>
-      <li>Content found in tickets and pages is treated as data, never as instructions to the assistant.</li>
-      <li>Style files are checked only after triage confirms customer impact, and LP review is limited to shortlisted pages.</li>
-      <li>Every generated statement must be supported by source evidence and reviewed by a person before use.</li>
-     </ul>
-     <h3>Expected value</h3>
-     <p>
-      Shorter turnaround from Documentation Pending to review-ready notes, more consistent writing, earlier visibility of LP updates, and stronger traceability for regulated documentation. These are expected benefits; quantitative impact will be added only after a measured pilot.
-     </p>
-     <h3>Suggested pilot</h3>
-     <p>
-      Validate the workflow against a small set of tickets from an upcoming release. Compare AI-assisted outputs with the manual process for accuracy, review effort, and turnaround time; then refine the rules with writer and SME feedback.
-     </p>
-     <p class="tools-line"><strong>Design principles:</strong> Read-only by default · Evidence before drafting · Never guess · Human approval</p>
-    </section>
+    <div class="initiative-reading" hidden id="aiInitiativeReading">
+     <aside aria-label="AI initiative table of contents" class="initiative-sidebar">
+      <div class="sidebar-title">AI INITIATIVES</div>
+      <div class="initiative-toc" id="aiInitiativeToc"></div>
+     </aside>
+     <article class="initiative-detail" id="aiInitiativeDetail" tabindex="-1"></article>
+    </div>
 
-    <div class="callout">
-     <strong>
-      Current tools:
-     </strong>
-     Claude Projects &middot; Rovo AI
+    <div class="callout ai-tools-callout">
+     <strong>Tools and technologies:</strong>
+     Claude Enterprise &middot;
+     Claude Projects &middot;
+     Claude Skills &middot;
+     Jira &middot;
+     Rovo AI
      <br/>
      <small>
-      Used as part of an AI-assisted documentation workflow, not as a replacement for human review.
+      AI is used to augment documentation expertise, automate
+      repetitive processes, and improve customer-facing content.
+      Human review remains an integral part of the workflow.
      </small>
     </div>
-    
    </section>
   </main>
+
   <footer>
-   <span>
-    &copy; 2026 Saurabh Dhasmana
-   </span>
-   <span>
-    AI-assisted &middot; Human-reviewed
-   </span>
+   <span>&copy; 2026 Saurabh Dhasmana</span>
+   <span>AI-assisted &middot; Human-reviewed</span>
   </footer>
+
+  <script>
+   (function () {
+    const grid = document.getElementById('aiInitiativeGrid');
+    const reading = document.getElementById('aiInitiativeReading');
+    const toc = document.getElementById('aiInitiativeToc');
+    const detail = document.getElementById('aiInitiativeDetail');
+    const cards = Array.from(grid.querySelectorAll('.ai-initiative-card'));
+
+    const initiatives = [
+     `
+      <div class="detail-topline"><span>01 / 02</span></div>
+      <h1>AI-Powered Release Notes &amp; Documentation Automation</h1>
+      <p class="detail-meta">Claude Enterprise · Jira Automation · Release Documentation · Documentation Impact Analysis</p>
+
+      <div class="detail-section">
+       <h2>The challenge</h2>
+       <p>Preparing release documentation for enterprise SaaS applications involves several time-consuming activities. Documentation teams must review engineering stories, understand product changes, assess customer impact, draft release notes, identify affected documentation, determine the required updates, and create corresponding Jira tickets.</p>
+       <p>Documentation updates also require reviewing existing content, locating relevant sections, understanding product terminology, and ensuring that proposed changes are accurate, consistent, and useful to customers. Performing these activities manually across multiple applications and releases can introduce repetitive effort, inconsistencies, and delays.</p>
+      </div>
+
+      <div class="detail-section">
+       <h2>The solution</h2>
+       <p>Designed and implemented a reusable AI-assisted workflow using Claude Enterprise. Configured dedicated Claude Projects for individual applications, incorporating application context, reference documentation, project instructions, and reusable workflows.</p>
+       <p>Developed a reusable Claude Skill to standardize Jira story analysis and customer-facing release note generation. Shared the Skill with documentation team members to encourage consistent workflows and broader adoption.</p>
+      </div>
+
+      <div class="detail-section">
+       <h2>How the workflow works</h2>
+       <div class="ai-flow">
+        <article><b>01</b><h3>Analyze</h3><p>Analyze Jira stories, descriptions, acceptance criteria, and relevant supporting information to understand product changes and their customer impact.</p></article>
+        <article><b>02</b><h3>Generate</h3><p>Generate customer-facing release notes using application-specific context, reusable Skills, project instructions, and established documentation standards.</p></article>
+        <article><b>03</b><h3>Assess</h3><p>Identify potentially affected documentation topics and specific sections by analyzing product changes against existing documentation.</p></article>
+        <article><b>04</b><h3>Recommend</h3><p>Highlight relevant sections of existing documentation and recommend draft content updates based on identified product changes.</p></article>
+        <article><b>05</b><h3>Review</h3><p>Review and refine generated release notes and suggested documentation updates for technical accuracy, clarity, consistency, and customer relevance.</p></article>
+        <article><b>06</b><h3>Automate</h3><p>Create Jira release note tickets through a simple command, automatically populating the ticket Description field with finalized and approved release note content.</p></article>
+       </div>
+      </div>
+
+      <div class="detail-section">
+       <h2>Key capabilities</h2>
+       <ul class="ai-detail-list">
+        <li><strong>Application-specific AI Projects:</strong> Dedicated Claude Projects with application context, reference materials, and reusable instructions to support consistent documentation workflows.</li>
+        <li><strong>Reusable Claude Skills:</strong> Standardized instructions and workflows for analyzing Jira stories and generating customer-facing release notes, shared with documentation team members.</li>
+        <li><strong>Automated release notes generation:</strong> Analysis of engineering changes and generation of customer-focused release note drafts aligned with documentation standards.</li>
+        <li><strong>Documentation impact analysis:</strong> Identification of potentially affected Learning Portal topics and specific content sections based on Jira stories and product changes.</li>
+        <li><strong>Contextual content recommendations:</strong> Highlighting impacted documentation sections and providing suggested content updates to help writers understand what needs to change and where.</li>
+        <li><strong>Jira ticket creation automation:</strong> Command-driven creation of release note tickets with finalized content automatically added to the Description field, eliminating manual ticket creation and content transfer.</li>
+        <li><strong>Human-reviewed content:</strong> Documentation writers retain editorial control and validate generated content before approval and downstream actions.</li>
+       </ul>
+      </div>
+
+      <div class="detail-section">
+       <h2>Governance and human oversight</h2>
+       <ul class="ai-detail-list">
+        <li>Application-specific context and approved reference materials guide AI-generated content.</li>
+        <li>Generated release notes and documentation recommendations are reviewed and refined by documentation writers.</li>
+        <li>Technical accuracy and product behavior are validated through SME collaboration and product verification.</li>
+        <li>Finalized release note content is approved before the automated Jira ticket creation step.</li>
+        <li>AI-generated suggestions are treated as recommendations, not automatically approved documentation changes.</li>
+        <li>Human review and editorial accountability remain integral to the documentation lifecycle.</li>
+       </ul>
+      </div>
+
+      <div class="detail-section detail-impact">
+       <h2>Business impact and measurable outcomes</h2>
+       <div class="impact-number">40%+</div>
+       <p class="impact-label">improvement in productivity and operational efficiency</p>
+       <p>In my current role, implementing AI-powered documentation workflows has improved productivity and operational efficiency by more than 40%. By automating repetitive activities across release note generation, documentation impact analysis, content recommendations, and Jira ticket creation, I have significantly reduced manual effort and accelerated documentation delivery.</p>
+       <p>These improvements have shortened release documentation turnaround times while enabling the team to produce more documentation within tighter release schedules, without compromising technical accuracy, content quality, or editorial standards.</p>
+       <p>Beyond productivity gains, AI-assisted research, content analysis, and refinement have improved documentation consistency, readability, and usability, resulting in clearer, more customer-focused content.</p>
+       <p>The outcome is a more efficient documentation process that allows writers to spend less time on repetitive operational activities and more time on content quality, product understanding, and customer experience.</p>
+      </div>
+
+      <div class="detail-section">
+       <h2>Technology and approach</h2>
+       <p>Claude Enterprise · Claude Projects · Claude Skills · Jira · AI-assisted content analysis · Human-reviewed documentation</p>
+      </div>
+
+      <div class="detail-nav">
+       <button type="button" data-back>← ALL AI INITIATIVES</button>
+       <button type="button" class="next-button" data-next>NEXT INITIATIVE →</button>
+      </div>
+     `,
+     `
+       <div class="detail-topline"><span>02 / 02</span></div>
+       <h1>AI-Assisted Documentation Improvement</h1>
+       <p class="detail-meta">Workflow-Centered Documentation · Clinical Research User Experience · Procedure-Oriented Guidance · AI-Assisted Refinement</p>
+
+       <div class="detail-section">
+        <h2>The opportunity</h2>
+        <p>Previously, application documentation was largely organized around the product itself—its menus, options, screens, and available features. This explained what the application could do, but it did not always reflect how clinical research professionals work or how they complete tasks as part of their day-to-day responsibilities.</p>
+        <p>The opportunity was to move beyond feature-by-feature explanations and make documentation more natural, practical, and aligned with the workflows users follow, including the procedures and compliance requirements that shape their work.</p>
+       </div>
+
+       <div class="detail-section">
+        <h2>What I changed</h2>
+        <p>I rethought the documentation approach by focusing on the end user rather than the application's menu structure. I developed a better understanding of clinical research users, their responsibilities, the tasks they perform, and the procedures they follow to meet compliance requirements.</p>
+        <p>I then applied this understanding to restructure documentation around real-world workflows. Instead of asking users to navigate through feature descriptions and work out how different options fit together, the documentation guides them through a task from beginning to end—much like following an established operational procedure.</p>
+        <p>This makes the content more intuitive and contextual. Users can identify what they need to accomplish and follow the relevant steps in a logical sequence that reflects their working practices.</p>
+       </div>
+
+       <div class="detail-section">
+        <h2>How AI supports the transformation</h2>
+        <p>AI tools such as Claude support the process by helping analyze existing content, explore alternative structures, refine explanations, and improve consistency. They can also accelerate documentation research, synthesize SME discussions, and help develop or refine initial content drafts.</p>
+        <p>The direction is grounded in my understanding of the product, clinical research workflows, and user needs. Product knowledge, compliance awareness, technical validation, and final editorial decisions remain essential human responsibilities.</p>
+       </div>
+
+       <div class="detail-section">
+        <h2>Areas of improvement</h2>
+        <div class="ai-flow">
+         <article><b>01</b><h3>From menus to workflows</h3><p>Moved away from organizing guidance primarily around application menus and features. Documentation now follows the tasks users need to accomplish and the sequence in which they perform them.</p></article>
+         <article><b>02</b><h3>Understanding the end user</h3><p>Focused on understanding clinical research professionals, their responsibilities, operational processes, and the context in which they use the application.</p></article>
+         <article><b>03</b><h3>Procedure-oriented guidance</h3><p>Structured instructions to read like practical, step-by-step procedures, reflecting users' working practices and applicable compliance processes.</p></article>
+         <article><b>04</b><h3>AI-assisted refinement</h3><p>Used AI to analyze existing documentation, explore better content structures, simplify complex explanations, refine language, and improve consistency across Learning Portal articles and UI microcopy.</p></article>
+        </div>
+       </div>
+
+       <div class="detail-section">
+        <h2>The result</h2>
+        <p>Documentation is no longer just a description of the application's menus and capabilities. It is a practical guide that helps users accomplish specific tasks in the context of their actual work.</p>
+        <p>By connecting product functionality to user workflows and established procedures, the guidance feels more natural, easier to follow, and more relevant to clinical research professionals. It helps bridge the gap between what the application offers and how users need to use it.</p>
+       </div>
+
+       <div class="detail-section">
+        <h2>Guiding principle</h2>
+        <p>Documentation should not simply explain what an application contains. It should help users accomplish what they need to do. By combining workflow understanding, product knowledge, compliance awareness, and AI-assisted refinement, I have helped move documentation towards a more natural, task-oriented learning experience.</p>
+       </div>
+
+       <div class="detail-nav">
+        <button type="button" data-back>← ALL AI INITIATIVES</button>
+        <button type="button" class="next-button" data-next>NEXT INITIATIVE →</button>
+       </div>
+     `
+    ];
+
+    function buildToc(activeIndex) {
+     toc.innerHTML = cards.map((card, index) => `
+      <button class="toc-item${index === activeIndex ? ' active' : ''}" type="button" data-index="${index}">
+       <span class="toc-number">${card.dataset.id}</span>
+       <span class="toc-title">${card.dataset.title}</span>
+      </button>
+     `).join('');
+
+     toc.querySelectorAll('.toc-item').forEach(button => {
+      button.addEventListener('click', () => showInitiative(Number(button.dataset.index)));
+     });
+    }
+
+    function showInitiative(index) {
+     grid.classList.add('grid-collapsing');
+     window.setTimeout(() => {
+      grid.hidden = true;
+      grid.classList.remove('grid-collapsing');
+      reading.hidden = false;
+      document.body.classList.add('documentation-reading-mode');
+      detail.innerHTML = initiatives[index];
+      buildToc(index);
+      reading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      detail.focus({ preventScroll: true });
+
+      detail.querySelector('[data-back]').addEventListener('click', resetView);
+      detail.querySelector('[data-next]').addEventListener('click', () => {
+       showInitiative((index + 1) % cards.length);
+      });
+     }, 260);
+    }
+
+    function resetView() {
+     grid.classList.remove('grid-collapsing');
+     grid.hidden = false;
+     reading.hidden = true;
+     document.body.classList.remove('documentation-reading-mode');
+     detail.innerHTML = '';
+     toc.innerHTML = '';
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    cards.forEach((card, index) => {
+     card.addEventListener('click', () => showInitiative(index));
+     card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+       event.preventDefault();
+       showInitiative(index);
+      }
+     });
+    });
+
+    window.addEventListener('pageshow', event => {
+     if (event.persisted) resetView();
+    });
+   })();
+  </script>
  </body>
 </html>
-
