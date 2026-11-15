@@ -9,7 +9,7 @@
    AI Initiatives &mdash; Saurabh Dhasmana
   </title>
   <link href="styles.css" rel="stylesheet"/>
-  <style>
+    <style>
    /* Card presentation follows the Documentation Initiatives landing page. */
    .ai-initiative-card {
     border:1px solid #ddd;
@@ -62,6 +62,133 @@
     }
    }
   </style>
+  <style>
+
+  /* Consistent responsive navigation across all portfolio pages */
+  .menu-toggle {
+   display: none;
+   align-items: center;
+   justify-content: center;
+   gap: 7px;
+   background: transparent;
+   border: 1px solid #222;
+   border-radius: 5px;
+   padding: 9px 10px;
+   color: #111;
+   cursor: pointer;
+   font: inherit;
+   font-size: 12px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   flex: 0 0 auto;
+   white-space: nowrap;
+  }
+
+  .menu-icon {
+   width: 19px;
+   height: 14px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+  }
+
+  .menu-icon span {
+   display: block;
+   width: 19px;
+   height: 2px;
+   background: currentColor;
+   transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:first-child {
+   transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) {
+   opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:last-child {
+   transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media screen and (max-width: 760px) {
+   .site-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    z-index: 1000;
+    box-sizing: border-box;
+   }
+
+   .site-header > .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 100px);
+   }
+
+   .site-header > .brand strong {
+    font-size: 12px;
+   }
+
+   .site-header > .brand small {
+    font-size: 8px;
+    line-height: 1.35;
+   }
+
+   .site-header > .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+   }
+
+   .site-header > nav {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 16px;
+    margin: 0;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+    z-index: 1001;
+   }
+
+   .site-header > nav.is-open {
+    display: flex !important;
+   }
+
+   .site-header > nav a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 10px;
+    border-bottom: 1px solid #eeeeee;
+    text-decoration: none;
+    font-size: 14px;
+   }
+
+   .site-header > nav a:last-child {
+    border-bottom: none;
+   }
+
+   .site-header > nav a.active {
+    font-weight: 700;
+   }
+  }
+
+ </style>
  </head>
 
  <body>
@@ -73,7 +200,17 @@
      <small>TECHNICAL WRITER &amp; DOCUMENTATION STRATEGIST</small>
     </span>
    </a>
-   <nav>
+   
+   <button class="menu-toggle" type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="main-navigation">
+    <span class="menu-icon" aria-hidden="true">
+     <span></span><span></span><span></span>
+    </span>
+    <span class="menu-label">Menu</span>
+   </button>
+<nav id="main-navigation">
     <a href="index.html">Home</a>
     <a href="resume.html">Resume</a>
     <a href="documentation.html">Documentation Initiatives</a>
@@ -348,5 +485,57 @@
     });
    })();
   </script>
+ 
+  <script>
+   (function () {
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#main-navigation');
+    if (!menuButton || !navigation) return;
+
+    const menuLabel = menuButton.querySelector('.menu-label');
+
+    function closeMenu() {
+     navigation.classList.remove('is-open');
+     menuButton.setAttribute('aria-expanded', 'false');
+     menuButton.setAttribute('aria-label', 'Open navigation menu');
+     if (menuLabel) menuLabel.textContent = 'Menu';
+    }
+
+    function openMenu() {
+     navigation.classList.add('is-open');
+     menuButton.setAttribute('aria-expanded', 'true');
+     menuButton.setAttribute('aria-label', 'Close navigation menu');
+     if (menuLabel) menuLabel.textContent = 'Close';
+    }
+
+    menuButton.addEventListener('click', function () {
+     const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+     if (isOpen) closeMenu();
+     else openMenu();
+    });
+
+    navigation.querySelectorAll('a').forEach(function (link) {
+     link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', function (event) {
+     if (!menuButton.contains(event.target) && !navigation.contains(event.target)) {
+      closeMenu();
+     }
+    });
+
+    document.addEventListener('keydown', function (event) {
+     if (event.key === 'Escape') {
+      closeMenu();
+      menuButton.focus();
+     }
+    });
+
+    window.addEventListener('resize', function () {
+     if (window.innerWidth > 760) closeMenu();
+    });
+   })();
+  </script>
+
  </body>
 </html>
